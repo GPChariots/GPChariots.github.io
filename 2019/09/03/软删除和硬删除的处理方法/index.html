@@ -56,13 +56,14 @@
 </script>
 
   <meta name="description" content="硬删除硬删除就是传统的物理删除，直接将该记录从数据库中删除。但是是人总会犯错误，在误操作删除了重要数据后，如果想要恢复该数据，需要锁表再去访问日志文件。这样会造成大量的人力资源浪费，现在的开发不推介这种方式。 软删除软删除又叫逻辑删除，标记删除，与我们常说的删除不同，并不是真的从数据库中将这条记录去除，而是会设置一个字段，常见的有：isDelete或者state等字段来标记删除状态。当该字段为0的">
+<meta name="keywords" content="后端开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软删除和硬删除的处理方法">
 <meta property="og:url" content="http://yoursite.com/2019/09/03/软删除和硬删除的处理方法/index.html">
 <meta property="og:site_name" content="葡萄战车的博客">
 <meta property="og:description" content="硬删除硬删除就是传统的物理删除，直接将该记录从数据库中删除。但是是人总会犯错误，在误操作删除了重要数据后，如果想要恢复该数据，需要锁表再去访问日志文件。这样会造成大量的人力资源浪费，现在的开发不推介这种方式。 软删除软删除又叫逻辑删除，标记删除，与我们常说的删除不同，并不是真的从数据库中将这条记录去除，而是会设置一个字段，常见的有：isDelete或者state等字段来标记删除状态。当该字段为0的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-03T01:38:10.545Z">
+<meta property="og:updated_time" content="2019-09-03T01:49:49.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软删除和硬删除的处理方法">
 <meta name="twitter:description" content="硬删除硬删除就是传统的物理删除，直接将该记录从数据库中删除。但是是人总会犯错误，在误操作删除了重要数据后，如果想要恢复该数据，需要锁表再去访问日志文件。这样会造成大量的人力资源浪费，现在的开发不推介这种方式。 软删除软删除又叫逻辑删除，标记删除，与我们常说的删除不同，并不是真的从数据库中将这条记录去除，而是会设置一个字段，常见的有：isDelete或者state等字段来标记删除状态。当该字段为0的">
@@ -247,12 +248,25 @@
                 
               
 
-              <time title="创建时间：2019-09-03 09:37:35 / 修改时间：09:38:10" itemprop="dateCreated datePublished" datetime="2019-09-03T09:37:35+08:00">2019-09-03</time>
+              <time title="创建时间：2019-09-03 09:37:35 / 修改时间：09:49:49" itemprop="dateCreated datePublished" datetime="2019-09-03T09:37:35+08:00">2019-09-03</time>
             </span>
           
             
 
             
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/后端开发/" itemprop="url" rel="index"><span itemprop="name">后端开发</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -284,14 +298,23 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/后端开发/" rel="tag"># 后端开发</a>
+            
+          </div>
+        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/02/hello-world/" rel="next" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
+                <a href="/2019/09/03/resume/" rel="next" title="个人简历">
+                  <i class="fa fa-chevron-left"></i> 个人简历
                 </a>
               
             </div>
@@ -300,8 +323,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/09/03/resume/" rel="prev" title="个人简历">
-                  个人简历 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/09/03/dd-engi的背包九讲（转载/" rel="prev" title="dd_engi的背包九讲（转载)">
+                  dd_engi的背包九讲（转载) <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -375,7 +398,7 @@
       
       <div class="site-state-item site-state-categories">
         
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
         
       </div>
@@ -384,7 +407,7 @@
       
       <div class="site-state-item site-state-tags">
         
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
         
       </div>
