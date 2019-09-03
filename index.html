@@ -177,17 +177,6 @@
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-about">
-      
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-
-  </li>
   </ul>
 
 </nav>
@@ -209,6 +198,101 @@
           <div id="content" class="content">
             
   <div id="posts" class="posts-expand">
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/点击bootstrap-dropdown下拉菜单无反应-解决方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="葡萄战车">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="葡萄战车的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/03/点击bootstrap-dropdown下拉菜单无反应-解决方法/" class="post-title-link" itemprop="url">点击bootstrap dropdown下拉菜单无反应 解决方法</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-03 09:58:22 / 修改时间：09:58:56" itemprop="dateCreated datePublished" datetime="2019-09-03T09:58:22+08:00">2019-09-03</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-jquery与bootstrap的依赖关系"><a href="#1-jquery与bootstrap的依赖关系" class="headerlink" title="1.jquery与bootstrap的依赖关系"></a>1.jquery与bootstrap的依赖关系</h3><p>由于bootstrap.js是依赖于jquery.js文件，所以文件的顺序应该如下表示。</p>
+<ol>
+<li>导入bootstrap的.css文件</li>
+<li>导入jquery的.js文件</li>
+<li>导入bootstrap的.js文件</li>
+</ol>
+<p>正确的导入代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot; type=&quot;text/css&quot;&gt;&lt;/link&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/bootstrap.min.js&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-bootstrap-css和-js文件版本不一致"><a href="#2-bootstrap-css和-js文件版本不一致" class="headerlink" title="2.bootstrap.css和.js文件版本不一致"></a>2.bootstrap.css和.js文件版本不一致</h3><p>这正是笔者遇到的情况，由于bootstrap版本过多，复制粘贴的时候难免会出现版本不一致的情况，这种情况也会导致下拉菜单无反应</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
         <article itemscope itemtype="http://schema.org/Article">
   
   
@@ -1016,6 +1100,9 @@ Milk4 (!) （很怪的背包问题问法，较难用纯DP求解）</code></pre><
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="葡萄战车">
   <p class="site-author-name" itemprop="name">葡萄战车</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -1024,7 +1111,7 @@ Milk4 (!) （很怪的背包问题问法，较难用纯DP求解）</code></pre><
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1033,18 +1120,26 @@ Milk4 (!) （很怪的背包问题问法，较难用纯DP求解）</code></pre><
       
       <div class="site-state-item site-state-categories">
         
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">分类</span>
+          
+            <a href="/categories/">
+          
         
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
       </div>
     
       
       
       <div class="site-state-item site-state-tags">
         
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">标签</span>
+          
+            <a href="/tags/">
+          
         
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
       </div>
     
   </nav>
