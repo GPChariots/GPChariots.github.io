@@ -683,99 +683,6 @@ Milk4 (!) （很怪的背包问题问法，较难用纯DP求解）</code></pre><
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/软删除和硬删除的处理方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="葡萄战车">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="葡萄战车的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/03/软删除和硬删除的处理方法/" class="post-title-link" itemprop="url">软删除和硬删除的处理方法</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-03 09:37:35 / 修改时间：09:49:49" itemprop="dateCreated datePublished" datetime="2019-09-03T09:37:35+08:00">2019-09-03</time>
-            </span>
-          
-            
-
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/后端开发/" itemprop="url" rel="index"><span itemprop="name">后端开发</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="硬删除"><a href="#硬删除" class="headerlink" title="硬删除"></a>硬删除</h1><p>硬删除就是传统的物理删除，直接将该记录从数据库中删除。但是是人总会犯错误，在误操作删除了重要数据后，如果想要恢复该数据，需要锁表再去访问日志文件。这样会造成大量的人力资源浪费，现在的开发不推介这种方式。</p>
-<h1 id="软删除"><a href="#软删除" class="headerlink" title="软删除"></a>软删除</h1><p>软删除又叫逻辑删除，标记删除，与我们常说的删除不同，并不是真的从数据库中将这条记录去除，而是会设置一个字段，常见的有：isDelete或者state等字段来标记删除状态。当该字段为0的时候为未删除状态，为1时则是删除状态。    </p>
-<p>在现实情况中，很多时候我们说的删除并不是真的是删除的本意，因为站在用户的角度来看，并不是一种删除的状态：<br>订单不是被删除的，是被“取消”的。<br>员工不是被删除的，是被“解雇”的（也可能是退休或者暂时离职了）。<br>职位不是被删除的，是被“填补”的（或者招聘申请被撤回）。<br>所以这些时候，我们并不能真的把记录删除，所以软删除就出现了。</p>
-<p>当然，我们更希望用一下代表状态的词来代替isDelete，就比如我们项目中已经使用的：有效、停用、弃用等等。<br>而在查询时只需要加上一个判断即可成功筛出软删除的对象了。<br>例：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> user.id, user.password <span class="keyword">from</span> tbl_user <span class="keyword">where</span> isDelete = <span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="软删除和硬删除的处理方法"><a href="#软删除和硬删除的处理方法" class="headerlink" title="软删除和硬删除的处理方法"></a>软删除和硬删除的处理方法</h1><p>实际上，并不是所有的记录都有必要被一直保留，过多的数据会导致查询效率低下，数据库臃肿。<br>比如许多程序的日志文件只会存留最近一周或者最近一月。对于更久的数据需要物理删除。</p>
-<p>那么有没有既能实现软删除保留需要的数据又能在数据量过大的时候进行物理删除的办法呢，答案是有的。<br>可以为state字段赋予另一个意义，当它是2时（当然别的数值也行）不再保留，直接物理删除。<br>或者再声明一个字段isRecycle，来表示该记录需不需要直接删除。<br>这样在定期维护数据库的同时也可以删除不再需要的记录。</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/resume/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -878,6 +785,99 @@ Milk4 (!) （很怪的背包问题问法，较难用纯DP求解）</code></pre><
 </li>
 </ul>
 <h2 id="教育背景"><a href="#教育背景" class="headerlink" title="教育背景"></a>教育背景</h2><h4 id="武汉纺织大学-（2016年9月-2020年6月）"><a href="#武汉纺织大学-（2016年9月-2020年6月）" class="headerlink" title="武汉纺织大学 （2016年9月~2020年6月）"></a>武汉纺织大学 （2016年9月~2020年6月）</h4><p>软件工程专业    学士</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/软删除和硬删除的处理方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="葡萄战车">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="葡萄战车的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/03/软删除和硬删除的处理方法/" class="post-title-link" itemprop="url">软删除和硬删除的处理方法</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-03 09:37:35 / 修改时间：09:49:49" itemprop="dateCreated datePublished" datetime="2019-09-03T09:37:35+08:00">2019-09-03</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/后端开发/" itemprop="url" rel="index"><span itemprop="name">后端开发</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="硬删除"><a href="#硬删除" class="headerlink" title="硬删除"></a>硬删除</h1><p>硬删除就是传统的物理删除，直接将该记录从数据库中删除。但是是人总会犯错误，在误操作删除了重要数据后，如果想要恢复该数据，需要锁表再去访问日志文件。这样会造成大量的人力资源浪费，现在的开发不推介这种方式。</p>
+<h1 id="软删除"><a href="#软删除" class="headerlink" title="软删除"></a>软删除</h1><p>软删除又叫逻辑删除，标记删除，与我们常说的删除不同，并不是真的从数据库中将这条记录去除，而是会设置一个字段，常见的有：isDelete或者state等字段来标记删除状态。当该字段为0的时候为未删除状态，为1时则是删除状态。    </p>
+<p>在现实情况中，很多时候我们说的删除并不是真的是删除的本意，因为站在用户的角度来看，并不是一种删除的状态：<br>订单不是被删除的，是被“取消”的。<br>员工不是被删除的，是被“解雇”的（也可能是退休或者暂时离职了）。<br>职位不是被删除的，是被“填补”的（或者招聘申请被撤回）。<br>所以这些时候，我们并不能真的把记录删除，所以软删除就出现了。</p>
+<p>当然，我们更希望用一下代表状态的词来代替isDelete，就比如我们项目中已经使用的：有效、停用、弃用等等。<br>而在查询时只需要加上一个判断即可成功筛出软删除的对象了。<br>例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> user.id, user.password <span class="keyword">from</span> tbl_user <span class="keyword">where</span> isDelete = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="软删除和硬删除的处理方法"><a href="#软删除和硬删除的处理方法" class="headerlink" title="软删除和硬删除的处理方法"></a>软删除和硬删除的处理方法</h1><p>实际上，并不是所有的记录都有必要被一直保留，过多的数据会导致查询效率低下，数据库臃肿。<br>比如许多程序的日志文件只会存留最近一周或者最近一月。对于更久的数据需要物理删除。</p>
+<p>那么有没有既能实现软删除保留需要的数据又能在数据量过大的时候进行物理删除的办法呢，答案是有的。<br>可以为state字段赋予另一个意义，当它是2时（当然别的数值也行）不再保留，直接物理删除。<br>或者再声明一个字段isRecycle，来表示该记录需不需要直接删除。<br>这样在定期维护数据库的同时也可以删除不再需要的记录。</p>
 
         
       
